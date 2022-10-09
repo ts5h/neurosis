@@ -20,7 +20,10 @@ export const App = () => {
     []
   );
 
-  const getWaitTime = useCallback((max: number) => Math.floor(Math.random() * max + 1), []);
+  const getWaitTime = useCallback(
+    (max: number) => Math.floor(Math.random() * max + 1),
+    []
+  );
 
   const animate = useCallback(() => {
     const tmpEmojis: Emoji[] = [];
@@ -57,7 +60,6 @@ export const App = () => {
     emojis && setEmojis(tmpEmojis);
   }, [emojis]);
   useAnimationFrame({ animate });
-
 
   const initEmojis = useMemo(() => {
     const tmpEmojis: Emoji[] = [];
