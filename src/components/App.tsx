@@ -12,7 +12,7 @@ type Emoji =
   | undefined;
 
 export const App = () => {
-  const emojisNumber = 900;
+  const emojisNumber = 1600;
   const [emojis, setEmojis] = useState<Emoji[]>();
 
   const getEmoji = useCallback(
@@ -33,13 +33,13 @@ export const App = () => {
       if (currentTime <= 0) {
         let max = 0;
         if (waitTime <= 4) {
-          if (Math.floor(Math.random() * 100) <= 2) {
-            max = Math.floor(Math.random() * 1000) + 1;
+          if (Math.floor(Math.random() * 100) <= 10) {
+            max = Math.floor(Math.random() * 300);
           } else {
-            max = 4;
+            max = 10;
           }
         } else {
-          max = 4;
+          max = 10;
         }
 
         const newWaitTime = getWaitTime(max);
@@ -64,7 +64,7 @@ export const App = () => {
   const initEmojis = useMemo(() => {
     const tmpEmojis: Emoji[] = [];
     for (let i = 0; i < emojisNumber; i++) {
-      const wait = getWaitTime(Math.random() * 100 <= 2 ? 1000 : 4);
+      const wait = getWaitTime(Math.random() * 100 <= 10 ? 300 : 10);
       tmpEmojis[i] = {
         emoji: getEmoji(),
         waitTime: wait,
