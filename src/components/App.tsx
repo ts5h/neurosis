@@ -15,16 +15,16 @@ export const App = () => {
   const emojisNumber = 1600;
   const [emojis, setEmojis] = useState<Emoji[]>();
 
-  const getEmoji = useCallback(
-    () => {
-      if (Math.floor(Math.random() * 100) < 1) {
-        return Symbol[Math.floor(Math.random() * Symbol.length)];
-      } else {
-        return Emoji[Math.floor(Math.random() * Emoji.length)];
-      }
-    },
-    []
-  );
+  const getEmoji = useCallback(() => {
+    const odds = Math.random() * 200;
+    if (odds < 0.4) {
+      return "";
+    } else if (odds < 1.4) {
+      return Symbol[Math.floor(Math.random() * Symbol.length)];
+    } else {
+      return Emoji[Math.floor(Math.random() * Emoji.length)];
+    }
+  }, []);
 
   const getWaitTime = useCallback(
     (max: number) => Math.floor(Math.random() * max + 1),
@@ -57,9 +57,9 @@ export const App = () => {
       }
 
       tmpEmojis[i] = {
-        emoji: emoji,
-        waitTime: waitTime,
-        currentTime: currentTime,
+        emoji,
+        waitTime,
+        currentTime,
       };
     }
 
