@@ -98,11 +98,8 @@ export const Emoji = [
   "👽",
   "👋",
   "🤚",
-  "🖐",
   "✋",
-  "🖖",
   "👌",
-  "🤏",
   "🖕",
   "👍",
   "👎",
@@ -111,7 +108,7 @@ export const Emoji = [
   "💪",
 ];
 
-export const Symbols = [
+export const Symbol = [
   "🧠",
   "💦",
   "❌",

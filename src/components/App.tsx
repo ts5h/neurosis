@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useAnimationFrame } from "./store/AnimationFrame";
-import { Emoji } from "./constants/Emoji";
+import { Emoji, Symbol } from "./constants/Emoji";
 import Styles from "./scss/App.module.scss";
 
 type Emoji =
@@ -16,7 +16,13 @@ export const App = () => {
   const [emojis, setEmojis] = useState<Emoji[]>();
 
   const getEmoji = useCallback(
-    () => Emoji[Math.floor(Math.random() * Emoji.length)],
+    () => {
+      if (Math.floor(Math.random() * 100) < 1) {
+        return Symbol[Math.floor(Math.random() * Symbol.length)];
+      } else {
+        return Emoji[Math.floor(Math.random() * Emoji.length)];
+      }
+    },
     []
   );
 
@@ -36,10 +42,10 @@ export const App = () => {
           if (Math.floor(Math.random() * 100) <= 10) {
             max = Math.floor(Math.random() * 300);
           } else {
-            max = 10;
+            max = 4;
           }
         } else {
-          max = 10;
+          max = 4;
         }
 
         const newWaitTime = getWaitTime(max);
@@ -64,13 +70,14 @@ export const App = () => {
   const initEmojis = useMemo(() => {
     const tmpEmojis: Emoji[] = [];
     for (let i = 0; i < emojisNumber; i++) {
-      const wait = getWaitTime(Math.random() * 100 <= 10 ? 300 : 10);
+      const wait = getWaitTime(Math.random() * 100 <= 10 ? 300 : 4);
       tmpEmojis[i] = {
         emoji: getEmoji(),
         waitTime: wait,
         currentTime: wait,
       };
     }
+
     return tmpEmojis;
   }, []);
 
