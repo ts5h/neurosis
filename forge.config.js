@@ -50,7 +50,8 @@ module.exports = {
         repository: {
           owner: "ts5h",
           name: "neurosis"
-        }
+        },
+        prerelease: true
       }
     }
   ]
