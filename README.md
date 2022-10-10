@@ -1,7 +1,7 @@
 # Neurosis
 
 An Electron desktop app for Windows.  
-(It should also work on Macintosh, but I have not tested it.)
+(It should also work on Macintosh, but I have not tested it, yet.)
 
 ## Quick Start
 ```bash
