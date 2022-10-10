@@ -15,6 +15,7 @@ const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     icon: "./public/images/icon.png",
+    title: "Kira Kira ☆ Neurosis",
     width: 850,
     height: 873,
     resizable: false,
