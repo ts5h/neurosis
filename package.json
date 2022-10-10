@@ -1,7 +1,7 @@
 {
   "name": "neurosis",
   "productName": "neurosis",
-  "version": "0.9.0",
+  "version": "0.9.3",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
@@ -26,6 +26,7 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
     "@electron-forge/maker-zip": "^6.0.0-beta.67",
     "@electron-forge/plugin-webpack": "6.0.0-beta.67",
+    "@electron-forge/publisher-github": "^6.0.0-beta.67",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
