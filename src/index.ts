@@ -91,9 +91,11 @@ if (app.isPackaged) {
     //
   });
 
-  autoUpdater.on("error", () => {
+  // TODO: Check the error
+  autoUpdater.on("error", (err) => {
     dialog.showMessageBox({
-      message: "アップデートエラーが起きました",
+      // message: "アップデートエラーが起きました",
+      message: err.message,
       buttons: ["OK"],
     });
   });
