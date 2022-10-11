@@ -12,8 +12,10 @@ type Emoji =
   | undefined;
 
 export const App = () => {
-  const emojisNumber = 1600;
   const [emojis, setEmojis] = useState<Emoji[]>();
+  const [isStill, setIsStill] = useState(false);
+  const [stillEmoji, setStillEmoji] = useState("");
+  const emojisNumber = 1600;
 
   const getEmoji = useCallback(() => {
     const odds = Math.random() * 200;
@@ -32,6 +34,8 @@ export const App = () => {
   );
 
   const animate = useCallback(() => {
+    if (!emojis) return;
+
     const tmpEmojis: Emoji[] = [];
     for (let i = 0; i < emojisNumber; i++) {
       let { emoji, waitTime, currentTime } = emojis[i];
@@ -67,6 +71,10 @@ export const App = () => {
   }, [emojis]);
   useAnimationFrame({ animate });
 
+  const onClick = useCallback(() => {
+    setIsStill((prevState) => !prevState);
+  }, []);
+
   const initEmojis = useMemo(() => {
     const tmpEmojis: Emoji[] = [];
     for (let i = 0; i < emojisNumber; i++) {
@@ -86,7 +94,7 @@ export const App = () => {
   }, []);
 
   return (
-    <div className={Styles.container}>
+    <div className={Styles.container} onClick={onClick}>
       {emojis?.map((emoji, idx) => (
         <div key={idx} className={Styles.item}>
           {emoji.emoji}

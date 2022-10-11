@@ -30,8 +30,11 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
+  // Open the DevTools
+  console.log(process.env.NODE_ENV);
+  if (process.env.NODE_ENV === "development") {
+    mainWindow.webContents.openDevTools();
+  }
 };
 
 // This method will be called when Electron has finished
@@ -61,7 +64,9 @@ app.on("activate", () => {
 
 // Auto Update
 const server = "https://update.electronjs.org";
-const feed = `${server}/OWNER/REPO/${process.platform}-${process.arch}/${app.getVersion()}`;
+const feed = `${server}/OWNER/REPO/${process.platform}-${
+  process.arch
+}/${app.getVersion()}`;
 
 if (app.isPackaged) {
   autoUpdater.setFeedURL({
@@ -76,7 +81,7 @@ if (app.isPackaged) {
       buttons: ["再起動", "後で"],
     });
     if (returnValue.response === 0) {
-      autoUpdater.quitAndInstall();  // アプリを終了してインストール
+      autoUpdater.quitAndInstall(); // アプリを終了してインストール
     }
   });
 
@@ -100,5 +105,3 @@ if (app.isPackaged) {
     });
   });
 }
-
-
