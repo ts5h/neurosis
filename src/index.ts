@@ -74,6 +74,7 @@ if (app.isPackaged) {
   });
   autoUpdater.checkForUpdates();
 
+  // TODO: Universalize language
   autoUpdater.on("update-downloaded", async () => {
     const returnValue = await dialog.showMessageBox({
       message: "アップデートあり",

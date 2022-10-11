@@ -97,6 +97,9 @@ export const Emoji = [
   "💀",
   "🤖",
   "👽",
+];
+
+export const Gesture = [
   "👋",
   "🤚",
   "✋",
