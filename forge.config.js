@@ -51,7 +51,7 @@ module.exports = {
           owner: "ts5h",
           name: "neurosis"
         },
-        prerelease: true
+        prerelease: true,
       }
     }
   ]
