@@ -15,7 +15,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    icon: "./public/images/icon.png",
+    icon: "./src/resources/images/icon.png",
     title: "Kira Kira ☆ Neurosis",
     width: 850,
     height: 873,

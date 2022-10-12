@@ -42,6 +42,9 @@ module.exports = {
       }
     ]
   ],
+  packagerConfig: {
+    icon: "./src/resources/images/icon",
+  },
   publishers: [
     {
       name: "@electron-forge/publisher-github",
