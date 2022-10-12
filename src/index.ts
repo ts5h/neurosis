@@ -64,7 +64,15 @@ app.on("activate", () => {
 // code. You can also put them in separate files and import them here.
 
 // Auto Update
+const server = "https://update.electronjs.org";
+const feed = `${server}/ts5h/neurosis/${process.platform}-${
+  process.arch
+}/${app.getVersion()}`;
+
 if (app.isPackaged) {
+  autoUpdater.setFeedURL({
+    url: feed,
+  });
   autoUpdater.checkForUpdates();
 
   autoUpdater.on("update-downloaded", async () => {
