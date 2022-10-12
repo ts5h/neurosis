@@ -64,16 +64,7 @@ app.on("activate", () => {
 // code. You can also put them in separate files and import them here.
 
 // Auto Update
-const server = "https://update.electronjs.org";
-// const feed = `${server}/OWNER/REPO/${process.platform}-${
-//   process.arch
-// }/${app.getVersion()}`;
-const feed = `${server}/OWNER/REPO/win32/${app.getVersion()}/RELEASES`;
-
 if (app.isPackaged) {
-  autoUpdater.setFeedURL({
-    url: feed,
-  });
   autoUpdater.checkForUpdates();
 
   autoUpdater.on("update-downloaded", async () => {
