@@ -43,7 +43,7 @@ module.exports = {
     ]
   ],
   packagerConfig: {
-    icon: "./src/resources/images/icon",
+    icon: "./public/images/icon",
   },
   publishers: [
     {

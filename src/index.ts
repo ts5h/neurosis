@@ -15,7 +15,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    icon: "./src/resources/images/icon.png",
+    icon: "./public/images/icon.ico",
     title: "Kira Kira ☆ Neurosis",
     width: 850,
     height: 873,
@@ -70,6 +70,8 @@ const feed = `${server}/ts5h/neurosis/${process.platform}-${
 }/${app.getVersion()}`;
 
 if (app.isPackaged) {
+  const locale = app.getLocale();
+
   autoUpdater.setFeedURL({
     url: feed,
   });
@@ -77,9 +79,16 @@ if (app.isPackaged) {
 
   autoUpdater.on("update-downloaded", async () => {
     const returnValue = await dialog.showMessageBox({
-      message: "アップデートあり",
-      detail: "再起動してインストールできます。",
-      buttons: ["更新して再起動", "後で"],
+      type: "info",
+      message: locale === "ja" ? "アップデートあり" : "Application Update",
+      detail:
+        locale === "ja"
+          ? "再起動してインストールできます。"
+          : "A new version has been downloaded. Restart the application to apply the updates.",
+      buttons: [
+        locale === "ja" ? "再起動" : "Restart",
+        locale === "ja" ? "後で" : "Later",
+      ],
     });
     if (returnValue.response === 0) {
       autoUpdater.quitAndInstall(); // アプリを終了してインストール
@@ -88,20 +97,24 @@ if (app.isPackaged) {
 
   autoUpdater.on("update-available", () => {
     dialog.showMessageBox({
-      message: "アップデートがあります",
+      type: "info",
+      message: locale === "ja" ? "アップデートあり" : "Application Update",
+      detail: locale === "ja" ? "アップデートがあります" : "A new version is being downloaded.",
       buttons: ["OK"],
     });
   });
 
   autoUpdater.on("update-not-available", () => {
-    log.info("Update not available");
+    log.info("Updates are not available");
   });
 
   // TODO: Check the error
   autoUpdater.on("error", (err) => {
     log.error(err);
     dialog.showMessageBox({
-      message: "アップデートエラーが起きました",
+      type: "error",
+      message: locale === "ja" ? "アップデートエラー" : "Update Error",
+      detail: locale === "ja" ? "アップデートエラーが発生しました" : "An update error occurred.",
       buttons: ["OK"],
     });
   });
