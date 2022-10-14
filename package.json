@@ -16,7 +16,7 @@
   "keywords": [],
   "author": {
     "name": "0bjekt / ts5h",
-    "email": "at4@jc4.so-net.ne.jp"
+    "email": "contact@0bjekt.co"
   },
   "license": "MIT",
   "devDependencies": {
@@ -33,6 +33,7 @@
     "@typescript-eslint/parser": "^5.0.0",
     "@vercel/webpack-asset-relocator-loader": "1.7.3",
     "babel-plugin-react-css-modules": "^5.2.6",
+    "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.0.0",
     "electron": "21.1.0",
     "eslint": "^8.0.1",

@@ -15,7 +15,7 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    icon: "./public/images/icon.ico",
+    icon: "./assets/images/icon.ico",
     title: "Kira Kira ☆ Neurosis",
     width: 850,
     height: 873,
@@ -99,7 +99,10 @@ if (app.isPackaged) {
     dialog.showMessageBox({
       type: "info",
       message: locale === "ja" ? "アップデートあり" : "Application Update",
-      detail: locale === "ja" ? "アップデートがあります" : "A new version is being downloaded.",
+      detail:
+        locale === "ja"
+          ? "アップデートがあります"
+          : "A new version is being downloaded.",
       buttons: ["OK"],
     });
   });
@@ -114,7 +117,10 @@ if (app.isPackaged) {
     dialog.showMessageBox({
       type: "error",
       message: locale === "ja" ? "アップデートエラー" : "Update Error",
-      detail: locale === "ja" ? "アップデートエラーが発生しました" : "An update error occurred.",
+      detail:
+        locale === "ja"
+          ? "アップデートエラーが発生しました"
+          : "An update error occurred.",
       buttons: ["OK"],
     });
   });
