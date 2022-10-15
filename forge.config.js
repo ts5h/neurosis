@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   makers: [
     {
@@ -43,7 +45,7 @@ module.exports = {
     ]
   ],
   packagerConfig: {
-    icon: "./assets/images/icon",
+    icon: path.resolve("./assets/images/icon"),
   },
   publishers: [
     {
