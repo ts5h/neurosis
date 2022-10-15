@@ -15,19 +15,22 @@ if (require("electron-squirrel-startup")) {
 
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    icon: path.resolve( "./assets/images/icon.ico"),
-    title: "Kira Kira ☆ Neurosis",
-    width: 850,
-    height: 873,
-    resizable: false,
-    minimizable: false,
-    webPreferences: {
-      preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
-    },
-  });
-
-  console.log(path.resolve( "./assets/images/icon.ico"));
+  let mainWindow;
+  try {
+    mainWindow = new BrowserWindow({
+      icon: path.resolve(__dirname, "../renderer/main_window/assets/images/icon.ico"),
+      title: "Kira Kira ☆ Neurosis",
+      width: 850,
+      height: 873,
+      resizable: false,
+      minimizable: false,
+      webPreferences: {
+        preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
+      },
+    });
+  } catch (err) {
+    log.error(err);
+  }
 
   mainWindow.setMenu(null);
 

@@ -45,7 +45,7 @@ module.exports = {
     ]
   ],
   packagerConfig: {
-    icon: path.resolve("./assets/images/icon"),
+    icon: path.resolve(__dirname, "../renderer/assets/images/icon"),
   },
   publishers: [
     {
