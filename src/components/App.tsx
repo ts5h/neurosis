@@ -38,7 +38,7 @@ export const App = () => {
     if (!emojis) return;
 
     const tmpEmojis: Emoji[] = [];
-    emojis.forEach((tmpEmoji, i) => {
+    emojis.forEach((tmpEmoji, index) => {
       let { emoji, waitTime, currentTime, rebelFlag } = tmpEmoji;
 
       if (still.isStill) {
@@ -71,7 +71,7 @@ export const App = () => {
         }
       }
 
-      tmpEmojis[i] = {
+      tmpEmojis[index] = {
         emoji,
         waitTime,
         currentTime,
