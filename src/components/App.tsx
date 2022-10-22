@@ -38,8 +38,8 @@ export const App = () => {
     if (!emojis) return;
 
     const tmpEmojis: Emoji[] = [];
-    for (let i = 0; i < emojis.length; i++) {
-      let { emoji, waitTime, currentTime, rebelFlag } = emojis[i];
+    emojis.forEach((tmpEmoji, index) => {
+      let { emoji, waitTime, currentTime, rebelFlag } = tmpEmoji;
 
       if (still.isStill) {
         // Peer pressure
@@ -52,7 +52,7 @@ export const App = () => {
         if (currentTime <= 0) {
           let max = 0;
           if (waitTime <= 4) {
-            if (Math.random() * 100 <= 10) {
+            if (Math.random() * 100 < 10) {
               max = Math.floor(Math.random() * 300);
             } else {
               max = 4;
@@ -71,13 +71,13 @@ export const App = () => {
         }
       }
 
-      tmpEmojis[i] = {
+      tmpEmojis[index] = {
         emoji,
         waitTime,
         currentTime,
         rebelFlag,
       };
-    }
+    });
 
     emojis && setEmojis(tmpEmojis);
   }, [emojis]);
