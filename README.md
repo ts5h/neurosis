@@ -2,7 +2,7 @@
 
 A tiny Electron desktop app for Windows.  
 
-<p align="center">
+<p align="center" style="max-width: 845px">
   <img src="https://github-production-user-asset-6210df.s3.amazonaws.com/1344010/263495550-cdfabd80-22c4-4cb8-9e83-43211a9ccdc8.png" />
 </p>
 
