@@ -18,7 +18,10 @@ const createWindow = () => {
   let mainWindow;
   try {
     mainWindow = new BrowserWindow({
-      icon: path.resolve(__dirname, "../renderer/main_window/assets/images/icon.ico"),
+      icon: path.resolve(
+        __dirname,
+        "../renderer/main_window/assets/images/icon.ico"
+      ),
       title: "Kira Kira ☆ Neurosis",
       width: 850,
       height: 873,
