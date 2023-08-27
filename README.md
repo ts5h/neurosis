@@ -3,7 +3,7 @@
 A tiny Electron desktop app for Windows.  
 
 <p align="center" style="max-width: 846px">
-  <img src="https://user-images.githubusercontent.com/1344010/263495831-b41c0077-7fd2-41ca-8bdd-3586620ad368.png" />
+  <img src="https://user-images.githubusercontent.com/1344010/263519547-cbbc2212-017e-4f23-9d58-e5df2e24df4f.png" />
 </p>
 
 ## Quick Start
