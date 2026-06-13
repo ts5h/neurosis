@@ -1,14 +1,12 @@
 import { defineConfig } from "vite";
 import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import babel from "@rolldown/plugin-babel";
-import wasm from 'vite-plugin-wasm'
 import { fileURLToPath, URL } from "node:url";
 
 export default defineConfig({
   base: "./",
   plugins: [
     react(),
-    wasm(),
     babel({
       presets: [reactCompilerPreset()],
     }),
