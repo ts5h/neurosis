@@ -5,10 +5,7 @@
   "packageManager": "pnpm@11.6.0",
   "type": "module",
   "scripts": {
-    "build:wasm": "wasm-pack build --target web ./wasm --out-dir ../src/wasm/pkg --out-name neurosis_wasm",
-    "watch:wasm": "node ./scripts/watch-wasm.mjs",
-    "dev:vite": "vite",
-    "dev": "pnpm run build:wasm && concurrently --kill-others-on-fail --names wasm,vite --prefix-colors magenta,cyan \"pnpm run watch:wasm\" \"pnpm run dev:vite\"",
+    "dev": "vite",
     "build": "pnpm run build:wasm && tsc -b && vite build",
     "lint": "pnpx @biomejs/biome check ./src",
     "lint:fix": "pnpx @biomejs/biome lint --write ./src",
@@ -32,12 +29,9 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "babel-plugin-react-compiler": "^1.0.0",
-    "chokidar": "^5.0.0",
-    "concurrently": "^10.0.3",
     "sass": "^1.101.0",
     "sass-embedded": "^1.100.0",
     "typescript": "^6.0.3",
-    "vite": "^8.0.16",
-    "vite-plugin-wasm": "^3.6.0"
+    "vite": "^8.0.16"
   }
 }
