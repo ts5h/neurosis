@@ -1,0 +1,62 @@
+.wrapper {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #444;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  opacity: 0.7;
+  transition: opacity 0.3s linear;
+
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  p {
+    opacity: 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &.on {
+    opacity: 1;
+
+    p {
+      opacity: 1;
+    }
+  }
+
+  &.tablet {
+    opacity: 0.7;
+    transition: none;
+
+    p {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    opacity: 0.7;
+    transition: none;
+
+    p {
+      display: none;
+    }
+  }
+}

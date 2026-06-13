@@ -1,0 +1,10 @@
+.idea
+
+node_modules
+/dist
+/src/wasm/pkg
+
+target
+/wasm/target
+
+*.tsbuildinfo

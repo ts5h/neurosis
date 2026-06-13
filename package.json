@@ -1,0 +1,42 @@
+{
+  "name": "crank-drawer",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@11.4.0",
+  "type": "module",
+  "scripts": {
+    "build:wasm": "wasm-pack build --target web ./wasm --out-dir ../src/wasm/pkg --out-name crank_drawer_wasm",
+    "watch:wasm": "node ./scripts/watch-wasm.mjs",
+    "dev:vite": "vite",
+    "dev": "pnpm run build:wasm && concurrently --kill-others-on-fail --names wasm,vite --prefix-colors magenta,cyan \"pnpm run watch:wasm\" \"pnpm run dev:vite\"",
+    "build": "pnpm run build:wasm && tsc -b && vite build",
+    "lint": "pnpx @biomejs/biome check ./src",
+    "lint:fix": "pnpx @biomejs/biome lint --write ./src",
+    "format": "pnpm lint:fix && pnpx @biomejs/biome format --write ./src",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.2.8",
+    "react": "^19.2.6",
+    "react-device-detect": "^2.2.3",
+    "react-dom": "^19.2.6",
+    "react-icons": "^5.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.7",
+    "@biomejs/biome": "^2.4.15",
+    "@rolldown/plugin-babel": "^0.2.3",
+    "@types/babel__core": "^7.20.5",
+    "@types/node": "^25.9.1",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.2",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "chokidar": "^5.0.0",
+    "concurrently": "^10.0.0",
+    "sass": "^1.100.0",
+    "sass-embedded": "^1.100.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.14"
+  }
+}
