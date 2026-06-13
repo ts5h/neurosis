@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import Styles from "@/Styles/CrankDrawer.module.scss";
+import Styles from "@/Styles/Neurosis.module.scss";
 import init, {
   start_crank_drawer,
   type CrankDrawerApp,
@@ -39,7 +39,7 @@ const toLineInfoArray = (value: unknown): LineInfo[] => {
   });
 };
 
-export const CrankDrawer = () => {
+export const Neurosis = () => {
   const [linesInfo, setLinesInfo] = useState<LineInfo[]>([]);
   const appRef = useRef<CrankDrawerApp | null>(null);
 

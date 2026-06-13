@@ -1,5 +1,5 @@
 import Styles from "@/styles/Menu.module.scss";
-import { MenuButtonGitHub } from "./Button/GitHub";
+import { MenuButtonGitHub } from "@/Components/Menu/Button/GitHub";
 import { MenuButtonReload } from "@/Components/Menu/Button/Reload";
 
 type Props = {
