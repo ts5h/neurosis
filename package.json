@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "pnpm run build:wasm && tsc -b && vite build",
+    "build": "tsc -b && vite build",
     "lint": "pnpx @biomejs/biome check ./src",
     "lint:fix": "pnpx @biomejs/biome lint --write ./src",
     "format": "pnpm lint:fix && pnpx @biomejs/biome format --write ./src",
