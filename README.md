@@ -8,7 +8,7 @@ https://0bjekt.co/2023/neurosis
 ## Project layout
 
 - `src/`: React frontend
-- `src/Components/CrankDrawer.tsx`: Host component that initializes WASM and forwards reset clicks
+- `src/Components/Neurosis.tsx`: Host component that initializes WASM and forwards reset clicks
 - `src/wasm/pkg/`: Generated wasm-bindgen package consumed by the frontend
 - `wasm/src/lib.rs`: Rust rendering and animation logic
 
