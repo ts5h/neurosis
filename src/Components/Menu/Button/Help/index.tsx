@@ -1,10 +1,11 @@
 import Styles from "@/Styles/Components/Menu.module.scss";
-import { Reload } from "@/icons";
 import { useState } from "react";
 import { isMobile } from "react-device-detect";
+import { IoMdHelpCircleOutline } from "react-icons/io";
 
 export const MenuButtonHelp = () => {
   const [isHover, setIsHover] = useState(false);
+  // const [showHelp, setShowHelp] = useState(false);
 
   const handleHover = (state: boolean) => {
     if (isMobile) return;
@@ -31,11 +32,9 @@ export const MenuButtonHelp = () => {
       onTouchEnd={() => handleTouch(false)}
       onClick={handleClick}
       className={isHover ? Styles.on : ""}
-      title="Reload"
+      title="Help"
     >
-      <span className={Styles.icon}>
-        <Reload />
-      </span>
+      <IoMdHelpCircleOutline className={Styles.icon} />
     </button>
   );
 };
