@@ -1,4 +1,4 @@
-# Kira Kira ☆ Neurosis
+# Kira Kira☆Neurosis
 2022
 
 A Web Version.  
