@@ -65,7 +65,7 @@ export const MenuButtonHelp = () => {
         </Button>
         <Flex direction="column" gap={"1"}>
           <Heading as={"h2"} size={"1"} style={{ fontWeight: 500 }}>
-            Kira Kira ☆ Neurosis (2023)
+            Kira Kira ☆ Neurosis (2022)
           </Heading>
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             This work explores the suffocating social pressure in Japan to
