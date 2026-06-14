@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { isMobile, isTablet } from "react-device-detect";
 import { ArrowBackToHome } from "@/icons";
-import Styles from "@/styles/MenuHome.module.scss";
+import Styles from "@/Styles/Components/MenuHome.module.scss";
 
 export const MenuButtonHome = () => {
   const [isHover, setIsHover] = useState(false);
@@ -18,8 +18,9 @@ export const MenuButtonHome = () => {
     return false;
   }, []);
 
-  const handleClick = useCallback(() => {
+  const handleClick = useCallback((e: any) => {
     window.location.href = "/";
+    e.stopPropagation();
     return false;
   }, []);
 

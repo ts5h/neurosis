@@ -1,4 +1,4 @@
-import Styles from "@/styles/Menu.module.scss";
+import Styles from "@/Styles/Components/Menu.module.scss";
 import { MenuButtonGitHub } from "@/Components/Menu/Button/GitHub";
 import { MenuButtonReload } from "@/Components/Menu/Button/Reload";
 
@@ -12,7 +12,7 @@ export const Menu = ({ showReload = false, repositoryUrl }: Props) => {
     <div className={Styles.wrapper}>
       <nav className={Styles.nav}>
         {showReload && <MenuButtonReload />}
-        <MenuButtonGitHub repositoryUrl={repositoryUrl} />
+        {repositoryUrl && <MenuButtonGitHub repositoryUrl={repositoryUrl} />}
       </nav>
     </div>
   );

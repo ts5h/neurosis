@@ -1,6 +1,6 @@
-import Styles from "@/Styles/Neurosis.module.scss";
+import Styles from "@/Styles/Components/Neurosis.module.scss";
 import { isMobile } from "react-device-detect";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { EmojiStrings } from "@/constants/Emoji";
 import { Application, extend } from "@pixi/react";
 import { Sprite } from "pixi.js";
@@ -37,17 +37,19 @@ export const Neurosis = () => {
     stillRef.current = tmpStill;
   };
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: Execute on mount only
-  useEffect(() => {
-    document.addEventListener("click", handleClick);
-
-    return () => {
-      document.removeEventListener("click", handleClick);
-    };
-  }, []);
+  const handleKeyboardEvent = () => {
+    return false;
+  };
 
   return (
-    <div className={Styles.container}>
+    <div
+      role={"application"}
+      tabIndex={-1}
+      onClick={handleClick}
+      onKeyDown={handleKeyboardEvent}
+      onKeyUp={handleKeyboardEvent}
+      className={Styles.container}
+    >
       <Application
         autoStart
         sharedTicker
