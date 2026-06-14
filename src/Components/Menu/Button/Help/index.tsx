@@ -70,10 +70,10 @@ export const MenuButtonHelp = () => {
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             This work explores the suffocating social pressure in Japan to
             constantly appear "sparkling" (Kira Kira) and seek collective
-            approval on social media. The rapidly and endless changing emojis
+            approval on communities. The rapidly and endless changing emojis
             represent the obsessive, relentless messages we receive from our
-            real/digital communities. Then, there is some empty spaces. They
-            might indicate that someone is absent or has gone missing.
+            real/digital world. Then, there is some empty spaces. It is indicate
+            that someone might be absent or has gone missing.
           </Text>
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             Click the screen to pause the update. While most emojis will align
