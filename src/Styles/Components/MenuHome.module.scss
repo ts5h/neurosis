@@ -16,11 +16,11 @@
   padding: 8px;
 
   border: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.75);
   cursor: pointer;
 
   opacity: 0;
-  transition: opacity 0.3s, background 0.3s;
+  transition: opacity 0.3s;
 
   .icon {
     width: 12px;
@@ -34,7 +34,6 @@
 
   &.on {
     opacity: 1;
-    background: rgba(255, 255, 255, 0.8);
 
     p {
       opacity: 1;
@@ -55,7 +54,6 @@
   .menu {
     background: white;
     opacity: 0.7;
-
     transition: none;
 
     p {
