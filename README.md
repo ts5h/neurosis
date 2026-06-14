@@ -1,5 +1,5 @@
 # Kira Kira ☆ Neurosis
-2022, 2026
+2022
 
 A Web Version.  
 Revised and released publicly in 2026.
@@ -20,5 +20,7 @@ pnpm dev
 ```bash
 pnpm build
 ```
+
+[MIT License](./LICENSE)
 
 
