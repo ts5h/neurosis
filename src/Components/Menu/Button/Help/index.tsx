@@ -43,7 +43,7 @@ export const MenuButtonHelp = () => {
         </button>
       </Popover.Trigger>
       <Popover.Content
-        width={"280px"}
+        width={"290px"}
         size={"1"}
         style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}
         ref={ref}
@@ -72,7 +72,8 @@ export const MenuButtonHelp = () => {
             constantly appear "sparkling" (Kira Kira) and seek collective
             approval on social media. The rapidly and endless changing emojis
             represent the obsessive, relentless messages we receive from our
-            real/digital communities.
+            real/digital communities. Then, there is some empty spaces. They
+            might indicate that someone is absent or has gone missing.
           </Text>
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             Click the screen to pause the update. While most emojis will align
