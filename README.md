@@ -4,7 +4,7 @@
 A Web Version.  
 Revised and released publicly in 2026.
 
-https://0bjekt.co/2023/neurosis
+https://0bjekt.co/2022/neurosis
 
 ----
 
