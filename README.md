@@ -1,7 +1,9 @@
 # Kira Kira ☆ Neurosis
-2023, 2026
+2022
 
-Web Version  
+A Web Version.  
+Revised and released publicly in 2026.
+
 https://0bjekt.co/2023/neurosis
 
 ----
@@ -18,5 +20,7 @@ pnpm dev
 ```bash
 pnpm build
 ```
+
+[MIT License](./LICENSE)
 
 
