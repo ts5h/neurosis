@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { isIOS, isMobile } from "react-device-detect";
 import { Reload } from "@/icons";
-import Styles from "@/styles/Menu.module.scss";
+import Styles from "@/Styles/Components/Menu.module.scss";
 
 export const MenuButtonReload = () => {
   const [isHover, setIsHover] = useState(false);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { isMobile } from "react-device-detect";
 import { AiFillGithub } from "react-icons/ai";
-import Styles from "@/styles/Menu.module.scss";
+import Styles from "@/Styles/Components/Menu.module.scss";
 
 type Props = {
   repositoryUrl?: string;

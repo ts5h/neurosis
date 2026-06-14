@@ -1,4 +1,4 @@
-# Kira Kira ☆ Neurosis 2
+# Kira Kira ☆ Neurosis (Web)
 2023, 2026
 
 https://0bjekt.co/2023/neurosis
