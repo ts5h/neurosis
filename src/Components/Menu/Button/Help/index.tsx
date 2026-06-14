@@ -43,7 +43,7 @@ export const MenuButtonHelp = () => {
         </button>
       </Popover.Trigger>
       <Popover.Content
-        width={"280px"}
+        width={"290px"}
         size={"1"}
         style={{ backgroundColor: "rgba(255, 255, 255, 0.9)" }}
         ref={ref}
@@ -65,14 +65,15 @@ export const MenuButtonHelp = () => {
         </Button>
         <Flex direction="column" gap={"1"}>
           <Heading as={"h2"} size={"1"} style={{ fontWeight: 500 }}>
-            Kira Kira ☆ Neurosis (2023)
+            Kira Kira ☆ Neurosis (2022)
           </Heading>
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             This work explores the suffocating social pressure in Japan to
             constantly appear "sparkling" (Kira Kira) and seek collective
-            approval on social media. The rapidly and endless changing emojis
+            approval on communities. The rapidly and endless changing emojis
             represent the obsessive, relentless messages we receive from our
-            real/digital communities.
+            real/digital world. Then, there is some empty spaces. It is indicate
+            that someone might be absent or has gone missing.
           </Text>
           <Text size={"1"} style={{ lineHeight: 1.35 }}>
             Click the screen to pause the update. While most emojis will align
