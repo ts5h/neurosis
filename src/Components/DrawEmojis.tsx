@@ -11,7 +11,7 @@ extend({
 
 const textStyle = new TextStyle({
   fontSize: 16,
-  fill: "#000",
+  fill: "#000000",
 });
 
 type EmojiProps = {
@@ -78,26 +78,19 @@ export const DrawEmojis = ({ stillRef }: Props) => {
 
     const tmpEmojis: EmojiProps[] = [];
     for (let i = 0; i < emojisNumber; i++) {
-      let { emoji, waitTime, currentTime, rebelFlag } = getNewEmojiSet();
-
-      if (emojis[i]) {
-        emoji = emojis[i].emoji;
-        waitTime = emojis[i].waitTime;
-        currentTime = emojis[i].currentTime;
-        rebelFlag = emojis[i].rebelFlag;
-      }
+      const tmpEmoji = emojis[i] ? emojis[i] : getNewEmojiSet();
 
       if (stillRef.current.isStill) {
         // Peer Pressure
-        if (emoji !== "" && !rebelFlag) {
-          emoji = stillRef.current.stillEmoji;
+        if (tmpEmoji.emoji !== "" && !tmpEmoji.rebelFlag) {
+          tmpEmoji.emoji = stillRef.current.stillEmoji;
         }
 
-        currentTime = 0;
+        tmpEmoji.currentTime = 0;
       } else {
-        if (currentTime <= 0) {
+        if (tmpEmoji.currentTime <= 0) {
           let max: number;
-          if (waitTime <= 4) {
+          if (tmpEmoji.waitTime <= 4) {
             if (Math.random() * 100 < 10) {
               max = Math.floor(Math.random() * 300);
             } else {
@@ -107,23 +100,18 @@ export const DrawEmojis = ({ stillRef }: Props) => {
             max = 4;
           }
 
-          emoji = getNewEmoji();
-          waitTime = getNewWaitTime(max);
-          currentTime = waitTime;
-          rebelFlag = stillRef.current.isStill
-            ? rebelFlag
+          tmpEmoji.emoji = getNewEmoji();
+          tmpEmoji.waitTime = getNewWaitTime(max);
+          tmpEmoji.currentTime = tmpEmoji.waitTime;
+          tmpEmoji.rebelFlag = stillRef.current.isStill
+            ? tmpEmoji.rebelFlag
             : Math.random() * 100 < 1;
         } else {
-          currentTime--;
+          tmpEmoji.currentTime--;
         }
       }
 
-      tmpEmojis[i] = {
-        emoji,
-        waitTime,
-        currentTime,
-        rebelFlag,
-      };
+      tmpEmojis.push(tmpEmoji);
     }
 
     setEmojis(tmpEmojis);
@@ -132,13 +120,7 @@ export const DrawEmojis = ({ stillRef }: Props) => {
   const initEmojis = () => {
     const tmpEmojis: EmojiProps[] = [];
     for (let i = 0; i < emojisNumber; i++) {
-      const wait = getNewWaitTime(Math.random() * 100 <= 10 ? 300 : 4);
-      tmpEmojis[i] = {
-        emoji: getNewEmoji(),
-        waitTime: wait,
-        currentTime: wait,
-        rebelFlag: false,
-      };
+      tmpEmojis.push(getNewEmojiSet());
     }
 
     return tmpEmojis;
